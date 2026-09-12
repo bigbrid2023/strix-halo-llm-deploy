@@ -1,0 +1,21 @@
+# Build outputs
+build-*/
+*.o
+*.so
+
+# Models (never commit)
+/models/
+/path/to/models/
+
+# Logs
+*.log
+journal/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
