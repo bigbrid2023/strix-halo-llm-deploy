@@ -7,6 +7,8 @@
 
 ---
 
+- **配套工具**：[llama-dashboard-manager](./llama-dashboard-manager/) — 模型/参数/监控管理 Dashboard
+
 ## 目录
 
 - [1. 硬件规格](#1-硬件规格)

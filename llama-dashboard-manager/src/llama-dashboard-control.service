@@ -1,0 +1,15 @@
+[Unit]
+Description=Restricted local controller for llama Dashboard
+After=network.target user@0.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/local/libexec/llama_dashboard_control.py --daemon
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
