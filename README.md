@@ -350,6 +350,33 @@ curl http://localhost:8080/health
 
 > **结论**：Strix Halo APU 上 **Vulkan 是唯一选择**，ROCm XNACK disabled 只能使用 65GB 窗口，跑不了 256K ctx。
 
+### 7.6 UD-Q2_K_XL + 512K 升级后实测（2026-09-16）
+
+升级到 UD-Q2_K_XL（78GB）+ 524288 (512K) ctx 后的服务状态：
+
+```bash
+$ curl http://127.0.0.1:8080/v1/models | jq '.data[0].meta'
+{
+  "n_ctx": 524288,           ← 512K ✅
+  "n_ctx_train": 524288,
+  "size": 78858104320,       ← ~78GB
+  "ftype": "Q2_K - Medium"
+}
+```
+
+性能数据（实际跑批累计）：
+
+| 指标 | 数值 |
+|---|---|
+| **生成速度（实测）** | 稳态 ~33 tok/s，峰值 ~50 tok/s |
+| **Prompt 处理** | 55 tok/s |
+| **Draft acceptance** | 54-69%（同 IQ4_XS）|
+| **模型大小** | 78GB（比 IQ4_XS 91GB 减 14%）|
+| **KV cache 量化** | q8_0（不变）|
+| **空闲休眠** | 30 分钟无请求自动 sleep |
+
+详细参数和踩坑见 [docs/q2-512k-upgrade.md](docs/q2-512k-upgrade.md)。
+
 ---
 
 ## 8. API 调用示例
