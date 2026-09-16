@@ -1,13 +1,15 @@
-# Qwen3.8 Flash Next (UD-IQ4_XS + MTP + Vision) 在 AMD Strix Halo APU 上的部署指南
+# Qwen3.8 Flash Next (UD-Q2_K_XL + 512K + MTP + Vision) 在 AMD Strix Halo APU 上的部署指南
 
 > **硬件**：AMD Ryzen AI MAX+ 395 (Strix Halo APU, 128GB 统一内存)
 > **系统**：Fedora Linux 44 (Kernel 7.1.13)
 > **部署时间**：2026-09-08
-> **最后更新**：2026-09-12
+> **最后更新**：2026-09-16
+> **当前生产配置**：UD-Q2_K_XL + 524288 (512K) ctx + MTP shared Q8_0 draft + mmproj vision（详见 [docs/q2-512k-upgrade.md](docs/q2-512k-upgrade.md)）
 
 ---
 
 - **配套工具**：[llama-dashboard-manager](./llama-dashboard-manager/) — 模型/参数/监控管理 Dashboard
+- **最新部署**：[Q2 + 512K 实战升级](docs/q2-512k-upgrade.md) — 2026-09-16 从 IQ4_XS/256K 升到 Q2_K_XL/512K 的完整参数 + 踩坑
 
 ## 目录
 
