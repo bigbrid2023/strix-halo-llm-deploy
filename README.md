@@ -4,7 +4,7 @@
 > **系统**：Fedora Linux 44 (Kernel 7.1.13)
 > **部署时间**：2026-09-08
 > **最后更新**：2026-09-16
-> **当前生产配置**：UD-Q2_K_XL + 524288 (512K) ctx + MTP shared Q8_0 draft + mmproj vision（详见 [docs/q2-512k-upgrade.md](docs/q2-512k-upgrade.md)）
+> **当前生产配置**：UD-Q2_K_XL + 524288 (512K) ctx / MTP shared Q8_0 draft / **多模态（mmproj vision）**（详见 [docs/q2-512k-upgrade.md](docs/q2-512k-upgrade.md)）
 
 ---
 
@@ -293,7 +293,7 @@ curl http://localhost:8080/health
 
 - **端口**：8080
 - **API**：OpenAI 兼容 (`http://localhost:8080/v1`)
-- **Capabilities**：`completion`, `multimodal`
+- **Capabilities**：`completion`, **`multimodal`**（多模态：文本+图像）
 
 ### 7.2 短对话生成速度
 
