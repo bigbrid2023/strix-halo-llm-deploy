@@ -3,14 +3,16 @@
 > **硬件**：AMD Ryzen AI MAX+ 395 (Strix Halo APU, 128GB 统一内存)
 > **系统**：Fedora Linux 44 (Kernel 7.1.13)
 > **部署时间**：2026-09-08
-> **最后更新**：2026-09-17
+> **最后更新**：2026-09-25
 > **当前生产配置**：UD-Q2_K_XL + 524288 (512K) ctx / MTP shared Q8_0 draft / **多模态（mmproj vision）**（详见 [docs/q2-512k-upgrade.md](docs/q2-512k-upgrade.md)）
+> **当前生产功率档**：90W (fast-limit=90000 / slow-limit=90000 / stapm-limit=176000)，见 [docs/dashboard-and-power-2026-09-25.md](docs/dashboard-and-power-2026-09-25.md)
 
 ---
 
-- **配套工具**：[llama-dashboard-manager](./llama-dashboard-manager/) — 模型/参数/监控管理 Dashboard
+- **配套工具**：[llama-dashboard-manager](./llama-dashboard-manager/) — 模型/参数/监控管理 Dashboard（v2026.09.16.2，详见 [新版 Dashboard 说明](docs/dashboard-and-power-2026-09-25.md#1-dashboard-新版变更点)）
 - **最新部署**：[Q2 + 512K 实战升级](docs/q2-512k-upgrade.md) — 2026-09-16 从 IQ4_XS/256K 升到 Q2_K_XL/512K 的完整参数 + 踩坑
 - **最新性能测试**：[Q2/IQ4 512K 性能对照](docs/性能测试报告_512K_20260917.md) — 2026-09-17 实测 MTP/微批量/线程数对首字与生成速度的影响 + 推荐参数
+- **功率 + Dashboard + llama.cpp 9-24 更新**：[docs/dashboard-and-power-2026-09-25.md](docs/dashboard-and-power-2026-09-25.md) — 2026-09-25 功率档甜点（90W）+ Dashboard 功率限制 / 调用来源 / 模型来源 + 上游 llama.cpp `6b790a9` 重编译 smoke test
 
 ## 目录
 
